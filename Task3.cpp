@@ -1,11 +1,11 @@
 #include <iostream>
 #pragma warning( disable : 4731 )
-//симметричность числа
+//Г±ГЁГ¬Г¬ГҐГІГ°ГЁГ·Г­Г®Г±ГІГј Г·ГЁГ±Г«Г 
 using namespace std;
 
 void test(int a)
 {
-	int result, res, ea, eb, ec, ed, es;
+	int result = 1;
 	int t = 2;
 	int d = 10;
 	__asm
@@ -35,16 +35,14 @@ void test(int a)
 		jne not_symm
 	is_symm2:
 		loop is_symm
-		mov result, 1
 		jmp end_
 	not_symm :
-		mov res, 0
+		mov result, 0
 		jmp is_symm2
 	end_ :
 
 	}
-	if (result == 1)
-		if (res != 0)
+		if (result != 0)
 			cout << "Number " << a << " is symmetric :)" << endl;
 		else
 			cout << "Number " << a << " is not symmetric :(" << endl;
